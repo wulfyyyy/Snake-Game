@@ -2,8 +2,16 @@ html,
 body {
   margin: 10;
   padding: 10;
+  display: flex;
+  width: 100vw;
 }
-
+.container {
+  position: relative;
+  margin: 0 auto;
+  height: 100vh;
+  justify-content: center;
+  align-content: center;
+}
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -17,10 +25,54 @@ body {
   height: 20px;
 }
 
+.control-container {
+  position: relative;
+}
+.touchBtn {
+  padding: 2px;
+  border: 2px black solid;
+  border-radius: 50px;
+  background: rgba(128, 128, 128, 0.692);
+}
+
+.upBtn,
+.downBtn,
+.leftBtn,
+.rightBtn {
+  position: absolute;
+}
+.downBtn {
+  padding: 10px;
+  right: 45%;
+  top: 50px;
+}
+.leftBtn {
+  padding: 10px;
+  right: 65%;
+  top: 20px;
+}
+.rightBtn {
+  padding: 10px;
+  right: 23%;
+  top: 20px;
+}
+.upBtn {
+  padding: 10px;
+  right: 45%;
+}
+
 .snake {
   background-color: green;
 }
 
 .apple {
   background-color: red;
+}
+
+/* Media queries */
+
+@media screen and (min-width: 602px) {
+  button.touchBtn {
+    display: none;
+  }
 }

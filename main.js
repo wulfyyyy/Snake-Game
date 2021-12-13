@@ -2,7 +2,10 @@ const grid = document.querySelector(".grid");
 
 const startBtn = document.querySelector("#start");
 const scoreDisplay = document.getElementById("score");
-
+const upBtn = document.querySelector(".upBtn");
+const downBtn = document.querySelector(".downBtn");
+const leftBtn = document.querySelector(".leftBtn");
+const rightBtn = document.querySelector(".rightBtn");
 let squares = [];
 let currentSnake = [2, 1, 0];
 let direction = 1;
@@ -107,5 +110,23 @@ function control(event) {
   }
 }
 
+upBtn.addEventListener("click", function () {
+  console.log("up clicked");
+  direction = -width;
+});
+
+downBtn.addEventListener("click", function () {
+  direction = +width;
+});
+
+leftBtn.addEventListener("click", function () {
+  direction = -1;
+});
+
+rightBtn.addEventListener("click", function () {
+  direction = 1;
+});
+
 document.addEventListener("keyup", control);
+
 startBtn.addEventListener("click", startGame);
